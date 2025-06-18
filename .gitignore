@@ -55,7 +55,7 @@ build/
 ### Environment Variables ###
 .env
 application-prod.properties
-application.properties
+# application.properties
 
 ### Logs ###
 *.log

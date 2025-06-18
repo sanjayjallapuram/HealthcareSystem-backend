@@ -28,13 +28,4 @@ public class DoctorProfileDTO {
     private String address;
     private List<String> certifications;
     private List<TimeSlot> availableSlots;
-}
-
-@Data
-@NoArgsConstructor
-class TimeSlot {
-    private String date;
-    private String startTime;
-    private String endTime;
-    private boolean isAvailable;
 } 
