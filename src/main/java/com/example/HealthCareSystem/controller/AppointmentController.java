@@ -22,7 +22,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/appointments")
 // @CrossOrigin(
-//     origins = "http://localhost:3000",
+//     origins = `${cors.allowed-origins}` || "http://localhost:3000",
 //     methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
 //     allowedHeaders = "*",
 //     exposedHeaders = "Authorization"
