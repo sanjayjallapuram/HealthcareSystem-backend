@@ -27,7 +27,7 @@ import java.util.HashSet;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST})
+// @CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST})
 public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;

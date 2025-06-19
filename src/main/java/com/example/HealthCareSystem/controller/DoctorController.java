@@ -18,12 +18,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/doctor")
-@CrossOrigin(
-    origins = "http://localhost:3000",
-    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
-    allowedHeaders = "*",
-    exposedHeaders = "Authorization"
-)
+// @CrossOrigin(
+//     origins = "http://localhost:3000",
+//     methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
+//     allowedHeaders = "*",
+//     exposedHeaders = "Authorization"
+// )
 public class DoctorController {
 
     @Autowired
