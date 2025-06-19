@@ -22,10 +22,10 @@ public class DoctorProfileDTO {
     private List<WorkingHours> workingHours;
     private double averageRating;
     private int numberOfReviews;
-    private List<Review> recentReviews;
+    // private List<Review> recentReviews;
     private boolean isAvailable;
     private String phoneNumber;
     private String address;
     private List<String> certifications;
-    private List<TimeSlot> availableSlots;
+    // private List<TimeSlot> availableSlots;
 } 

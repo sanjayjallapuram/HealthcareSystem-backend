@@ -14,13 +14,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/medical-records")
-// @CrossOrigin(
-//     origins = "http://localhost:3000",
-//     methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS},
-//     allowedHeaders = "*",
-//     exposedHeaders = "*",
-//     allowCredentials = "true"
-// )
 public class MedicalController {
     private static final Logger logger = LoggerFactory.getLogger(MedicalController.class);
 

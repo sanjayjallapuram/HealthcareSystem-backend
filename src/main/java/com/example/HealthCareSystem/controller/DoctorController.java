@@ -18,12 +18,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/doctor")
-// @CrossOrigin(
-//     origins = "http://localhost:3000",
-//     methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS},
-//     allowedHeaders = "*",
-//     exposedHeaders = "Authorization"
-// )
 public class DoctorController {
 
     @Autowired
@@ -77,12 +71,7 @@ public class DoctorController {
             return new ResponseEntity<>(doctors,HttpStatus.NOT_IMPLEMENTED);
         }
     }
-
-    // @PostMapping("/{id}/review")
-    // public ResponseEntity<?> addReview(@PathVariable String id, @RequestBody Review review) {
-    //     return doctorService.addReview(id, review);
-    // }
-
+    
     @PutMapping("/{id}/profile")
     public ResponseEntity<?> updateProfile(@PathVariable String id, @RequestBody Doctors updatedDoctor) {
         Doctors doctor = doctorService.updateDoctorProfile(id, updatedDoctor);

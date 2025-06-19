@@ -27,7 +27,6 @@ import java.util.HashSet;
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 @Slf4j
-// @CrossOrigin(origins = "http://localhost:3000", methods = {RequestMethod.GET, RequestMethod.POST})
 public class AuthenticationController {
 
     private final AuthenticationManager authenticationManager;
@@ -36,119 +35,6 @@ public class AuthenticationController {
     private final UserService userService;
     private final DoctorService doctorService;
     private final PatientService patientService;
-
-    // @PostMapping("/register")
-    // public ResponseEntity<AuthResponse> register(@RequestBody User user) {
-    //     try {
-    //         log.info("Attempting to register user: {}", user.getUsername());
-            
-    //         // Check if username already exists
-    //         if (userService.existsByUsername(user.getUsername())) {
-    //             log.warn("Username already exists: {}", user.getUsername());
-    //             return ResponseEntity.badRequest()
-    //                 .body(AuthResponse.builder()
-    //                     .success(false)
-    //                     .message("Username already exists")
-    //                     .build());
-    //         }
-
-    //         // Save user
-    //         boolean saved = userService.saveNewUser(user);
-    //         if (!saved) {
-    //             log.error("Failed to save user: {}", user.getUsername());
-    //             return ResponseEntity.internalServerError()
-    //                 .body(AuthResponse.builder()
-    //                     .success(false)
-    //                     .message("Failed to save user")
-    //                     .build());
-    //         }
-
-    //         log.info("User saved successfully: {}", user.getUsername());
-
-    //         // Create role-specific entries
-    //         try {
-    //             if (user.getRoles().contains("ROLE_DOCTOR")) {
-    //                 log.info("Creating doctor entry for user: {}", user.getUsername());
-    //                 Doctors doctor = new Doctors();
-    //                 doctor.setEmail(user.getEmail());
-    //                 doctor.setUsername(user.getUsername());
-    //                 doctor.setPassword(user.getPassword());
-    //                 doctor.setContactNo(user.getContactNo() != null ? user.getContactNo() : 0L);
-    //                 doctorService.saveEntry(doctor);
-    //             }
-    //             if (user.getRoles().contains("ROLE_PATIENT")) {
-    //                 log.info("Creating patient entry for user: {}", user.getUsername());
-    //                 Patients patient = new Patients();
-    //                 patient.setEmail(user.getEmail());
-    //                 patient.setUsername(user.getUsername());
-    //                 patient.setPassword(user.getPassword());
-    //                 patientService.saveEntry(patient);
-    //             }
-    //         } catch (Exception e) {
-    //             log.error("Error creating role-specific entry for user: {}", user.getUsername(), e);
-    //             // Delete the user since role-specific entry creation failed
-    //             userService.deleteUser(user.getUsername());
-    //             throw e;
-    //         }
-
-    //         // Generate token
-    //         String token = jwtUtil.generateToken(user.getUsername(), user.getRoles());
-    //         log.info("Registration successful for user: {}", user.getUsername());
-
-    //         return ResponseEntity.ok(AuthResponse.builder()
-    //             .success(true)
-    //             .message("User registered successfully")
-    //             .token(token)
-    //             .username(user.getUsername())
-    //             .email(user.getEmail())
-    //             .roles(user.getRoles())
-    //             .build());
-
-    //     } catch (Exception e) {
-    //         log.error("Registration failed for user: {}", user.getUsername(), e);
-    //         return ResponseEntity.internalServerError()
-    //             .body(AuthResponse.builder()
-    //                 .success(false)
-    //                 .message("Registration failed: " + e.getMessage())
-    //                 .build());
-    //     }
-    // }
-
-    // @PostMapping("/login")
-    // public ResponseEntity<AuthResponse> login(@RequestBody User user) {
-    //     try {
-    //         authenticationManager.authenticate(
-    //             new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword())
-    //         );
-
-    //         UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
-    //         User fullUser = userService.findByUsername(user.getUsername());
-    //         String token = jwtUtil.generateToken(userDetails.getUsername(), fullUser.getRoles());
-
-    //         return ResponseEntity.ok(AuthResponse.builder()
-    //             .success(true)
-    //             .message("Login successful")
-    //             .token(token)
-    //             .username(fullUser.getUsername())
-    //             .email(fullUser.getEmail())
-    //             .roles(fullUser.getRoles())
-    //             .build());
-
-    //     } catch (BadCredentialsException e) {
-    //         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-    //             .body(AuthResponse.builder()
-    //                 .success(false)
-    //                 .message("Invalid username or password")
-    //                 .build());
-    //     } catch (Exception e) {
-    //         log.error("Login failed for user: " + user.getUsername(), e);
-    //         return ResponseEntity.internalServerError()
-    //             .body(AuthResponse.builder()
-    //                 .success(false)
-    //                 .message("Login failed: " + e.getMessage())
-    //                 .build());
-    //     }
-    // }
 
     @PostMapping("/validate")
     public ResponseEntity<AuthResponse> validateToken(@RequestHeader("Authorization") String token) {

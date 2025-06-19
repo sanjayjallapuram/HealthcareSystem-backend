@@ -33,7 +33,6 @@ public class PublicController {
         return "HEllo";
     }
 
-
     @Autowired
     private UserService userService;
 

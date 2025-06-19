@@ -44,7 +44,7 @@ public class Doctors {
     private List<WorkingHours> workingHours = new ArrayList<>();
     private double averageRating;
     private int numberOfReviews;
-    private List<Review> reviews = new ArrayList<>();
+    // private List<Review> reviews = new ArrayList<>();
     private boolean isAvailable = true;
     private String phoneNumber;
     private String address;
@@ -69,22 +69,3 @@ public class Doctors {
                 '}';
     }
 }
-
-// @Data
-// @NoArgsConstructor
-// class WorkingHours {
-//     private String dayOfWeek; // e.g., "MONDAY"
-//     private String startTime; // e.g., "09:00"
-//     private String endTime;   // e.g., "17:00"
-// }
-
-// @Data
-// @NoArgsConstructor
-// class Review {
-//     private String id;
-//     private String patientId;
-//     private String patientName;
-//     private int rating;
-//     private String comment;
-//     private String date;
-// }
